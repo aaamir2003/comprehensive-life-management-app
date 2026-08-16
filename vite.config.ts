@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: "./", // تغییر به مسیر نسبی
+  base: "/comprehensive-life-management-app/", // باید دقیقاً نام ریپازیتوری باشد
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
