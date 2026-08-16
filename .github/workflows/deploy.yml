@@ -1,32 +1,19 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: [ master ]
-
-# اضافه کردن دسترسی نوشتن برای Workflow
 permissions:
   contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
+      - name: Install
         run: npm ci
-
-      - name: Build Project
+      - name: Build
         run: npx vite build
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
