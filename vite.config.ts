@@ -9,8 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  // تنظیم base روی "./" برای مسیردهی نسبی در GitHub Pages
-  base: "./", 
+  base: "/comprehensive-life-management-app/",
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
